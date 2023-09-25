@@ -1,0 +1,12 @@
+#titre{
+    background-color: rgb(18, 18, 156);
+}
+body{
+    text-align: center;
+}
+#formulaire{
+    border: 1px solid black;
+}
+.ville{
+    display: none;
+}
