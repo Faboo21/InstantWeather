@@ -10,3 +10,6 @@ body{
 .ville{
     display: none;
 }
+#resultat{
+    display:none;
+}
