@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
+
     <div id="titre">
-        <img id="meteo" src="images/meteo.png" /><h1>Instant Weather</h1>
+        <img id="meteo" src="images/meteo.png" />
+        <h1>Instant Weather</h1>
     </div>
-    <div id="formulaire">
-        <label for="inputCP">Entrez un code postal : </label>
-        <input type="number" name="CP" id="inputCP" placeholder="Code Postal" step="1">
-        <br>
-        <label for="inputVille" class="ville">Choisissez votre ville : </label>
-        <select id="inputVille" class="ville">
-        
-        </select>
-        <button id="boutonVille" class="ville">Valider</button>
-    </div>
+ 
+        <div id="formulaire">
+
+            <label for="inputCP">Entrez un code postal : </label>
+            <input type="number" name="CP" id="inputCP" placeholder="Code Postal" step="1">
+            <br>
+            <label for="inputVille" class="ville">Choisissez votre ville : </label>
+            <select id="inputVille" class="ville">
+
+            </select>
+            <button id="boutonVille" class="ville">Valider</button>
+        </div>
+
     <div id="resultat">
         <div id="min"> </div>
         <div id="max"> </div>
         <div id="pluie"></div>
         <div id="soleil"> </div>
+        <div id="latitude"></div>
+        <div id="longitude"></div>
+        <div id="precipitation"></div>
+        <div id="vent"></div>
+        <div id="dirVent"></div>
         <button id="refresh">Nouvelle recherche</button>
+         <form>
+            <label class="formulaire" for="latitude">Latitude : </label>
+            <input class="formulaire" type="checkbox" name="latitude" id="lat">
+            <label class="formulaire" for="longitude">longitude : </label>
+            <input class="formulaire" type="checkbox" name="longitude" id="lon">
+            <label class="formulaire" for="précipitation">précipitation : </label>
+            <input class="formulaire" type="checkbox" name="précipitation" id="pre">
+            <label class="formulaire" for="vent">vent : </label>
+            <input class="formulaire" type="checkbox" name="vent" id="vent">
+            <label class="formulaire" for="direction_vent">direction vent : </label>
+            <input class="formulaire" type="checkbox" name="direction_vent" id="dirVent">
+        </form> 
     </div>
+
+
     <script src="./script/script.js"></script>
+    
 </body>
+
 </html>

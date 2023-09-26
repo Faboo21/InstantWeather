@@ -10,6 +10,17 @@ const min = document.getElementById("min")
 const max = document.getElementById("max")
 const pluie = document.getElementById("pluie")
 const soleil = document.getElementById("soleil")
+const latitude = document.getElementById("latitude")
+const longitude = document.getElementById("longitude")
+const precipitation = document.getElementById("precipitation")
+const vent = document.getElementById("vent")
+const dirVent = document.getElementById("dirVent")
+const check_latitude = document.getElementById("lat");
+const check_longitude = document.getElementById("lon");
+const check_precipitation = document.getElementById("pre");
+const check_vent = document.getElementById("vent");
+const check_dirVent = document.getElementById("dirVent");
+
 
 let codePostal;
 
@@ -59,10 +70,28 @@ function valider() {
         max.innerText=`temperture maximal : ${data['forecast'][0]['tmax']}°C`
         soleil.innerText=`Ensoleillement journalier : ${data['forecast'][0]['sun_hours']} heures`
         pluie.innerText=`Probabilité de pluie : ${data['forecast'][0]['probarain']}%`
+        latitude.innerText=`latitude : ${data['forecast'][0]['latitude']}°`
+        longitude.innerText=`longitude : ${data['forecast'][0]['longitude']}°`
+        precipitation.innerText=`precipitation : ${data['forecast'][0]['rr10']}mm`
+        vent.innerText=`vent : ${data['forecast'][0]['wind10m']}km/h`
+        dirVent.innerText=`dirction du vent : ${data['forecast'][0]['dirwind10m']}°`
+
+
+
+
+
     })
     .catch(error => {
         console.error('error', error)
     })
 }
+
+
+latitude.style.display='none'
+
+
+
+
+
 
 
