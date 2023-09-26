@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>InstantWeather</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="./images/icone.png" type="image/x-icon"> 
+    <script src="https://kit.fontawesome.com/ce1dde0645.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="titre">
-        <img id="meteo" src="images/meteo.png" /><h1>Instant Weather</h1>
+        <img id="meteo" src="images/meteo.png" />
+        <h1>Instant Weather</h1>
     </div>
     <div id="formulaire">
         <label for="inputCP">Entrez un code postal : </label>
         <input type="number" name="CP" id="inputCP" placeholder="Code Postal" step="1">
-        <br>
-        <label for="inputVille" class="ville">Choisissez votre ville : </label>
-        <select id="inputVille" class="ville">
+        <div id="villediv">
+            <label for="inputVille" class="ville">Choisissez votre ville : </label>
+            <select id="inputVille" class="ville">
+            </select>
+            <em id="boutonVille" class="ville fa-solid fa-check" style="color: #000000;"></em>
+        </div>
         
-        </select>
-        <button id="boutonVille" class="ville">Valider</button>
+
+        
     </div>
     <div id="resultat">
-        <div id="min"> </div>
-        <div id="max"> </div>
-        <div id="pluie"></div>
-        <div id="soleil"> </div>
+        <div id="min" class="result"> </div>
+        <div id="max" class="result"> </div>
+        <div id="pluie" class="result"></div>
+        <div id="soleil" class="result"> </div>
         <button id="refresh">Nouvelle recherche</button>
     </div>
     <script src="./script/script.js"></script>
 </body>
+
 </html>
