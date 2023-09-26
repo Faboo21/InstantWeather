@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
 #titre{
-    background-color: rgb(18, 18, 156);
+    background-color: rgb(0, 153, 255);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid black 2px;
+    margin: 10px;
+    font-size: 30px;
 }
 body{
     text-align: center;
+    font-family: 'Croissant One', cursive;
 }
 #formulaire{
     border: 1px solid black;
@@ -12,4 +20,7 @@ body{
 }
 #resultat{
     display:none;
+}
+#meteo{
+    width: 300px;
 }
