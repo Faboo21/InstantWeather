@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,15 @@
 </head>
 
 <body>
-    <div id="titre">
-        <img id="meteo" src="images/meteo.png" />
-        <h1>Instant Weather</h1>
-    </div>
+    <header>
+        <div id="titre">
+            <img id="meteo" alt="image ilustration meteo" src="images/meteo.png">
+            <h1>Instant Weather</h1>
+        </div>
+    </header>
     <div id="formulaire">
         <label for="inputCP">Entrez un code postal : </label>
-        <input type="number" name="CP" id="inputCP" placeholder="Code Postal" step="1">
+        <input type="number" name="CP" id="inputCP" placeholder="Code Postal" value="" step="1">
         <div id="villediv">
             <label for="inputVille" class="ville">Choisissez votre ville : </label>
             <select id="inputVille" class="ville">
@@ -25,15 +27,13 @@
             <em id="boutonVille" class="ville fa-solid fa-check" style="color: #000000;"></em>
         </div>
         
-
-        
     </div>
     <div id="resultat">
         <div id="min" class="result"> </div>
         <div id="max" class="result"> </div>
         <div id="pluie" class="result"></div>
         <div id="soleil" class="result"> </div>
-        <button id="refresh">Nouvelle recherche</button>
+        <em id="refresh" class="fa-solid fa-rotate-right" style="color: #000000;"></em>
     </div>
     <script src="./script/script.js"></script>
 </body>

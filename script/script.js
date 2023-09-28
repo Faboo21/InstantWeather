@@ -13,6 +13,7 @@ const soleil = document.getElementById("soleil")
 
 let codePostal;
 
+listenerCP()
 inputCP.addEventListener("input", () => listenerCP())
 boutonVille.addEventListener("click", () => valider())
 refresh.addEventListener("click",() => {location.reload()})
@@ -32,6 +33,7 @@ function listenerCP() {
         })
         .then(data => {
             if (data.length > 0) {
+                inputVille.innerHTML =""
                 for (let i = 0; i < data.length; i++) {
                     inputVille.innerHTML += `<option value="${data[i]['code']}">${data[i]['nom']}</option>`
                 }
@@ -55,9 +57,9 @@ function valider() {
             return Response.json();
         })
     .then(data => {
-        min.innerText=`temperture minimal : ${data['forecast'][0]['tmin']}°C`
-        max.innerText=`temperture maximal : ${data['forecast'][0]['tmax']}°C`
-        soleil.innerText=`Ensoleillement journalier : ${data['forecast'][0]['sun_hours']} heures`
+        min.innerText=`Temperture minimal : ${data['forecast'][0]['tmin']}°C`
+        max.innerText=`Temperture maximal : ${data['forecast'][0]['tmax']}°C`
+        soleil.innerText=`Ensoleillement journalier : ${data['forecast'][0]['sun_hours']}h`
         pluie.innerText=`Probabilité de pluie : ${data['forecast'][0]['probarain']}%`
     })
     .catch(error => {

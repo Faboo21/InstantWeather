@@ -21,7 +21,6 @@ body{
     border: solid rgb(0, 0, 0) 5px;
     margin: 10px;
     font-size: 30px;
-    margin-left: auto;
 }
 select{
     margin-left: auto;
@@ -45,14 +44,28 @@ select{
     width: 50px;
 }
 .ville{
+    display: none;
     margin-top: 20px;
+}
+#boutonVille{
     display: none;
 }
 #resultat{
     display: none;
 }
 .result{
-
+    background-color: transparent;
+    margin: 10px;
+    width: 23%;
+    float: left;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 50px;
+    vertical-align:middle;
+    line-height: 50px;
+    border: solid black 3px;
 }
 #meteo{
     width: 300px;
@@ -62,4 +75,8 @@ select{
     border: solid black 3px;
     background-color: transparent;
     border-radius: 10px;
+}
+#refresh{
+    font-size: 3em;
+    margin: 20px;
 }
