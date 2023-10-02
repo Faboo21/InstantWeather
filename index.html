@@ -28,14 +28,18 @@
 
     </div>
     <div id="resultat">
-        <div id="min" class="result"> </div>
-        <div id="max" class="result"> </div>
-        <div id="pluie" class="result"></div>
-        <div id="soleil" class="result"> </div>
+        <div id="min"> </div>
+        <div id="max"> </div>
+        <div id="pluie"></div>
+        <div id="soleil"> </div>
+        <div id="latitude"></div>
+        <div id="longitude"></div>
+        <div id="precipitation"></div>
+        <div id="vent"></div>
+        <div id="dirVent"></div>
+        <a href="#id01" id="param" class="fa-solid fa-gear" style="color: #000000;"></a>
         <em id="refresh" class="fa-solid fa-rotate-right" style="color: #000000;"></em>
     </div>
-
-    <a href="#id01" id="param" class="fa-solid fa-gear" style="color: #000000;"></a>
 
     <div id="id01" class="modal">
         <div class="modal-dialog">
@@ -54,11 +58,11 @@
                     <label for="pre">Precipitation : </label>
                     <input id="pre" type="checkbox">
                     <br><br>
-                    <label for="vent">Vitesse du vent : </label>
-                    <input id="vent" type="checkbox">
+                    <label for="vente">Vitesse du vent : </label>
+                    <input id="vente" type="checkbox">
                     <br><br>
-                    <label for="dirVent">Orientation du vent : </label>
-                    <input id="dirVent" type="checkbox">
+                    <label for="dirVente">Orientation du vent : </label>
+                    <input id="dirVente" type="checkbox">
                     <br><br>
                     <div id="jour">
                         <label for="nbjour">Nombre de jours : </label>
@@ -66,7 +70,7 @@
                         <input id="nbjour" type="range" min="1" max="7" value="1">
                         <br><br>
                     </div>
-                    <em id="validerParame" class="ville fa-solid fa-check" style="color: #000000;"></em>
+                    <a href="#" id="validerParame" class="fa-solid fa-check" style="color: #000000;"></a>
                 </div>
             </div>
         </div>

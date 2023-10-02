@@ -82,7 +82,7 @@ select{
 }
 
 #param{
-    font-size: 30px;
+    font-size: 3em;
     text-decoration: none;
 }
 
@@ -161,4 +161,14 @@ select{
 
 .container-head {
     padding: 2px 16px;
+}
+
+#validerParame{
+    font-size: 30px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+#resultat{
+    display: block;
 }
