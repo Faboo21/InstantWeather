@@ -5,6 +5,8 @@ const ville = document.getElementsByClassName("ville")
 const resultat = document.getElementById("resultat")
 const formulaire = document.getElementById("formulaire")
 const refresh = document.getElementById('refresh')
+const value = document.getElementById("value");
+const nbjour = document.getElementById("nbjour");
 
 const min = document.getElementById("min")
 const max = document.getElementById("max")
@@ -17,6 +19,11 @@ listenerCP()
 inputCP.addEventListener("input", () => listenerCP())
 boutonVille.addEventListener("click", () => valider())
 refresh.addEventListener("click",() => {location.reload()})
+
+value.textContent = nbjour.value;
+nbjour.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+});
 
 function listenerCP() {
     codePostal = inputCP.value
@@ -66,5 +73,3 @@ function valider() {
         console.error('error', error)
     })
 }
-
-
