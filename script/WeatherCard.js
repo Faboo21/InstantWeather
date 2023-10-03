@@ -11,7 +11,7 @@ class WeatherCard {
                     <p class="card_tempMin" id="tempMin">Température minimale: <span>0</span>°C</p>
                     <p class="card_tempMax" id="tempMax">Température maximale: <span>0</span>°C</p>
                     <p class="card_rainProb" id="rainProb">Probabilité de pluie: <span>0</span>%</p>
-                    <p class="card_sunlight" id="sunlight">Ensoleillement journalier: <span>0</span>heures</p>
+                    <p class="card_sunlight" id="sunlight">Ensoleillement journalier: <span>0</span> heures</p>
                     <p class="card_latitude" id="latitude">Latitude: <span>0</span>°</p>
                     <p class="card_longitude" id="longitude">Longitude: <span>0</span>°</p>
                     <p class="card_precipitation" id="precipitation">Précipitation: <span>0</span>mm</p>

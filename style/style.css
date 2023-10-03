@@ -189,3 +189,53 @@ select{
 .weather-details p {
     margin: 5px 0;
 }
+
+.weather-card {
+    flex-basis: calc(14.28% - 16px); /* C'est la largeur "idéale" ou "de base" pour chaque carte. */
+    flex-grow: 0; /* Empêche les cartes de grandir pour occuper un espace supplémentaire */
+    flex-shrink: 0; /* Empêche les cartes de rétrécir */
+    min-height: 200px;
+    width: calc(14.28% - 16px);  /* 100% divisé par 7 (pour 7 cartes) moins l'espace */
+    margin: 0;
+    padding: 10px;  /* ajustez selon vos besoins */
+}
+
+#weatherCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center; /* pour centrer horizontalement */
+    width: 100%; /* pour occuper toute la largeur */
+    align-items: start; /* aligne le haut des cartes */
+        overflow-x: auto;
+        margin: 0 auto; /* Pour centrer le conteneur dans la fenêtre */
+}
+
+
+@media (max-width: 1200px) {
+    .weather-card {
+        flex-basis: calc(16.66% - 16px); /* 100% / 6 */
+    }
+}
+
+@media (max-width: 1000px) {
+    .weather-card {
+        flex-basis: calc(20% - 16px); /* 100% / 5 */
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .weather-card {
+        flex-basis: 100%; /* Les cartes occuperont 100% de la largeur de leur conteneur */
+        max-width: 100%; /* S'assure qu'ils n'essaient pas de devenir plus grands que 100% */
+        margin: 10px 0; /* Espace entre les cartes empilées; ajustez comme vous le souhaitez */
+    }
+}
+
+em{
+    cursor: pointer;
+}

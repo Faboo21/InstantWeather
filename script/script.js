@@ -93,7 +93,8 @@ function valider() {
                 let precipitatione = data['forecast'][i]['rr10']
                 let ventee = data['forecast'][i]['wind10m']
                 let dirVentee = data['forecast'][i]['dirwind10m']
-                dataWeather = { 'imagePath': "../images/meteo.png", 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee }
+                let imagePath = weatherCodeToImage[data['forecast'][i]['weather']];
+                dataWeather = { 'imagePath': "../"+imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee }
  
                 const weatherCard = new WeatherCard();
                 weatherCard.appendTo(weatherCardsContainer);
@@ -114,5 +115,97 @@ function valider() {
 function validerParam() {
     valider();
 }
+
+let weatherCodeToImage = {
+    0: "images/soleil.jpg",
+    1: "images/soleil_nuage.jpg",
+    2: "images/soleil_nuage.jpg",
+    3: "images/nuage.jpg",
+    4: "images/nuage.jpg",
+    5: "images/nuage.jpg",
+    6: "images/brouillard.jpg",
+    7: "images/brouillard.jpg",
+    10: "images/pluie.jpg",
+    11: "images/pluie.jpg",
+    12: "images/pluie.jpg",
+    13: "images/pluie.jpg",
+    14: "images/pluie.jpg",
+    15: "images/pluie.jpg",
+    16: "images/pluie.jpg",
+    20: "images/neige.jpg",
+    21: "images/neige.jpg",
+    22: "images/neige.jpg",
+    30: "images/pluie.jpg",
+    31: "images/pluie.jpg",
+    32: "images/pluie.jpg",
+    40: "images/pluie.jpg",
+    41: "images/pluie.jpg",
+    42: "images/pluie.jpg",
+    43: "images/pluie.jpg",
+    44: "images/pluie.jpg",
+    45: "images/pluie.jpg",
+    46: "images/pluie.jpg",
+    47: "images/pluie.jpg",
+    48: "images/pluie.jpg",
+    60: "images/neige.jpg",
+    61: "images/neige.jpg",
+    62: "images/neige.jpg",
+    63: "images/neige.jpg",
+    64: "images/neige.jpg",
+    65: "images/neige.jpg",
+    66: "images/neige.jpg",
+    67: "images/neige.jpg",
+    68: "images/neige.jpg",
+    70: "images/pluie.jpg",
+    71: "images/pluie.jpg",
+    72: "images/pluie.jpg",
+    73: "images/pluie.jpg",
+    74: "images/pluie.jpg",
+    75: "images/pluie.jpg",
+    76: "images/pluie.jpg",
+    77: "images/pluie.jpg",
+    78: "images/pluie.jpg",
+    100: "images/orage.jpg",
+    101: "images/orage.jpg",
+    102: "images/orage.jpg",
+    103: "images/orage.jpg",
+    104: "images/orage.jpg",
+    105: "images/orage.jpg",
+    106: "images/orage.jpg",
+    107: "images/orage.jpg",
+    108: "images/orage.jpg",
+    120: "images/orage.jpg",
+    121: "images/orage.jpg",
+    122: "images/orage.jpg",
+    123: "images/orage.jpg",
+    124: "images/orage.jpg",
+    125: "images/orage.jpg",
+    126: "images/orage.jpg",
+    127: "images/orage.jpg",
+    128: "images/orage.jpg",
+    130: "images/orage.jpg",
+    131: "images/orage.jpg",
+    132: "images/orage.jpg",
+    133: "images/orage.jpg",
+    134: "images/orage.jpg",
+    135: "images/orage.jpg",
+    136: "images/orage.jpg",
+    137: "images/orage.jpg",
+    138: "images/orage.jpg",
+    140: "images/pluie.jpg",
+    141: "images/pluie.jpg",
+    142: "images/pluie.jpg",
+    210: "images/pluie.jpg",
+    211: "images/pluie.jpg",
+    212: "images/pluie.jpg",
+    220: "images/neige.jpg",
+    221: "images/neige.jpg",
+    222: "images/neige.jpg",
+    230: "images/pluie.jpg",
+    231: "images/pluie.jpg",
+    232: "images/pluie.jpg",
+    235: "images/orage.jpg"
+};
+
 
 
