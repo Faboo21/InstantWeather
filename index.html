@@ -13,24 +13,25 @@
     <header>
         <div id="titre">
             <h1>Instant Weather</h1>
+            <h2>Simple comme un jeu d'enfant</h2>
         </div>
     </header>
     <div id="formulaire">
         <label for="inputCP">Entrez un code postal : </label>
-        <input name="CP" id="inputCP" placeholder="Code Postal" value="" step="1">
+        <input name="CP" id="inputCP" type="text" placeholder="Code Postal" value="">
         <div id="villediv">
             <label for="inputVille" class="ville">Choisissez votre ville : </label>
             <select id="inputVille" class="ville">
             </select>
-            <a id="boutonVille" class="ville"><img src="./images/check.png" height="70px" width="70px" alt="check"/></a>
+            <a id="boutonVille" class="ville hover"><img src="./images/check.png" height="70" width="70" alt="check"></a>
         </div>
 
     </div>
     <div id="resultat">
-        <h2 id="nomVille"></h2>
+        <h2 id="nomVille">Ville</h2>
         <div id="weatherCardsContainer"></div>
-        <a href="#id01" id="param"><img src="images/param.png" alt="prametres" height="80px" width="80px"></a>
-        <a id="refresh"><img src="images/refresh.png" alt="recharge" height="80px" width="80px"></a>
+        <a href="#id01" id="param" class="hover"><img src="images/param.png" alt="prametres" height="80" width="80"></a>
+        <a id="refresh" class="hover"><img src="images/refresh.png" alt="recharge" height="80" width="80"></a>
     </div>
 
     <div id="id01" class="modal">
@@ -43,27 +44,27 @@
 
                 <div class="container-modal">
                     <label for="lat">Latitude : </label>
-                    <input id="lat" type="checkbox">
+                    <input id="lat" type="checkbox" class="check">
                     <br><br>
                     <label for="lon">Longitude : </label>
-                    <input id="lon" type="checkbox">
+                    <input id="lon" type="checkbox" class="check">
                     <br><br>
                     <label for="pre">Precipitation : </label>
-                    <input id="pre" type="checkbox">
+                    <input id="pre" type="checkbox" class="check">
                     <br><br>
                     <label for="vente">Vitesse du vent : </label>
-                    <input id="vente" type="checkbox">
+                    <input id="vente" type="checkbox" class="check">
                     <br><br>
                     <label for="dirVente">Orientation du vent : </label>
-                    <input id="dirVente" type="checkbox">
+                    <input id="dirVente" type="checkbox" class="check">
                     <br><br>
                     <div id="jour">
                         <label for="nbjour">Nombre de jours : </label>
                         <div id="value"></div>
-                        <input id="nbjour" type="range" min="1" max="7" value="1">
+                        <input id="nbjour" type="range" min="1" max="7" value="1" class="line">
                         <br><br>
                     </div>
-                    <a href="#" id="validerParame"><img src="./images/check.png" height="40px" width="40px" alt="check"/></a>
+                    <a href="#" id="validerParame" class="hover"><img src="./images/check.png" height="40" width="40" alt="check"></a>
                 </div>
             </div>
         </div>
