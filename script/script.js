@@ -7,6 +7,7 @@ const formulaire = document.getElementById("formulaire")
 const refresh = document.getElementById('refresh')
 const value = document.getElementById("value");
 const nbjour = document.getElementById("nbjour");
+const nomVille = document.getElementById("nomVille");
 
 const min = document.getElementById("min")
 const max = document.getElementById("max")
@@ -28,7 +29,6 @@ const check_vent = document.getElementById("vente");
 const check_dirVent = document.getElementById("dirVente");
 
 let codePostal;
-let numberOfDays = 3;
 let dataWeather;
 
 
@@ -44,6 +44,15 @@ nbjour.addEventListener("input", (event) => {
 })
 
 function listenerCP() {
+
+    let newValue = inputCP.value.replace(/[^0-9]/g, '');
+    
+    if (newValue.length > 5) {
+        newValue = newValue.substring(0, 5);
+    }
+
+    inputCP.value = newValue;
+    
     codePostal = inputCP.value
 
     for (var i = 0; i < ville.length; i++) { ville[i].style.display = "none" }
@@ -83,6 +92,7 @@ function valider() {
             return Response.json();
         })
         .then(data => {
+            nomVille.innerText = "Prévisions pour la ville de "+data['city']['name']
             for (let i = 0; i < nbjour.value; i++) {
                 let mine = data['forecast'][i]['tmin']
                 let maxe = data['forecast'][i]['tmax']
@@ -117,94 +127,94 @@ function validerParam() {
 }
 
 let weatherCodeToImage = {
-    0: "images/soleil.jpg",
-    1: "images/soleil_nuage.jpg",
-    2: "images/soleil_nuage.jpg",
-    3: "images/nuage.jpg",
-    4: "images/nuage.jpg",
-    5: "images/nuage.jpg",
-    6: "images/brouillard.jpg",
-    7: "images/brouillard.jpg",
-    10: "images/pluie.jpg",
-    11: "images/pluie.jpg",
-    12: "images/pluie.jpg",
-    13: "images/pluie.jpg",
-    14: "images/pluie.jpg",
-    15: "images/pluie.jpg",
-    16: "images/pluie.jpg",
-    20: "images/neige.jpg",
-    21: "images/neige.jpg",
-    22: "images/neige.jpg",
-    30: "images/pluie.jpg",
-    31: "images/pluie.jpg",
-    32: "images/pluie.jpg",
-    40: "images/pluie.jpg",
-    41: "images/pluie.jpg",
-    42: "images/pluie.jpg",
-    43: "images/pluie.jpg",
-    44: "images/pluie.jpg",
-    45: "images/pluie.jpg",
-    46: "images/pluie.jpg",
-    47: "images/pluie.jpg",
-    48: "images/pluie.jpg",
-    60: "images/neige.jpg",
-    61: "images/neige.jpg",
-    62: "images/neige.jpg",
-    63: "images/neige.jpg",
-    64: "images/neige.jpg",
-    65: "images/neige.jpg",
-    66: "images/neige.jpg",
-    67: "images/neige.jpg",
-    68: "images/neige.jpg",
-    70: "images/pluie.jpg",
-    71: "images/pluie.jpg",
-    72: "images/pluie.jpg",
-    73: "images/pluie.jpg",
-    74: "images/pluie.jpg",
-    75: "images/pluie.jpg",
-    76: "images/pluie.jpg",
-    77: "images/pluie.jpg",
-    78: "images/pluie.jpg",
-    100: "images/orage.jpg",
-    101: "images/orage.jpg",
-    102: "images/orage.jpg",
-    103: "images/orage.jpg",
-    104: "images/orage.jpg",
-    105: "images/orage.jpg",
-    106: "images/orage.jpg",
-    107: "images/orage.jpg",
-    108: "images/orage.jpg",
-    120: "images/orage.jpg",
-    121: "images/orage.jpg",
-    122: "images/orage.jpg",
-    123: "images/orage.jpg",
-    124: "images/orage.jpg",
-    125: "images/orage.jpg",
-    126: "images/orage.jpg",
-    127: "images/orage.jpg",
-    128: "images/orage.jpg",
-    130: "images/orage.jpg",
-    131: "images/orage.jpg",
-    132: "images/orage.jpg",
-    133: "images/orage.jpg",
-    134: "images/orage.jpg",
-    135: "images/orage.jpg",
-    136: "images/orage.jpg",
-    137: "images/orage.jpg",
-    138: "images/orage.jpg",
-    140: "images/pluie.jpg",
-    141: "images/pluie.jpg",
-    142: "images/pluie.jpg",
-    210: "images/pluie.jpg",
-    211: "images/pluie.jpg",
-    212: "images/pluie.jpg",
-    220: "images/neige.jpg",
-    221: "images/neige.jpg",
-    222: "images/neige.jpg",
-    230: "images/pluie.jpg",
-    231: "images/pluie.jpg",
-    232: "images/pluie.jpg",
-    235: "images/orage.jpg"
+    0: "images/soleil.png",
+    1: "images/soleil_nuage.png",
+    2: "images/soleil_nuage.png",
+    3: "images/nuage.png",
+    4: "images/nuage.png",
+    5: "images/nuage.png",
+    6: "images/brouillard.png",
+    7: "images/brouillard.png",
+    10: "images/pluie.png",
+    11: "images/pluie.png",
+    12: "images/pluie.png",
+    13: "images/pluie.png",
+    14: "images/pluie.png",
+    15: "images/pluie.png",
+    16: "images/pluie.png",
+    20: "images/neige.png",
+    21: "images/neige.png",
+    22: "images/neige.png",
+    30: "images/pluie.png",
+    31: "images/pluie.png",
+    32: "images/pluie.png",
+    40: "images/pluie.png",
+    41: "images/pluie.png",
+    42: "images/pluie.png",
+    43: "images/pluie.png",
+    44: "images/pluie.png",
+    45: "images/pluie.png",
+    46: "images/pluie.png",
+    47: "images/pluie.png",
+    48: "images/pluie.png",
+    60: "images/neige.png",
+    61: "images/neige.png",
+    62: "images/neige.png",
+    63: "images/neige.png",
+    64: "images/neige.png",
+    65: "images/neige.png",
+    66: "images/neige.png",
+    67: "images/neige.png",
+    68: "images/neige.png",
+    70: "images/pluie.png",
+    71: "images/pluie.png",
+    72: "images/pluie.png",
+    73: "images/pluie.png",
+    74: "images/pluie.png",
+    75: "images/pluie.png",
+    76: "images/pluie.png",
+    77: "images/pluie.png",
+    78: "images/pluie.png",
+    100: "images/orage.png",
+    101: "images/orage.png",
+    102: "images/orage.png",
+    103: "images/orage.png",
+    104: "images/orage.png",
+    105: "images/orage.png",
+    106: "images/orage.png",
+    107: "images/orage.png",
+    108: "images/orage.png",
+    120: "images/orage.png",
+    121: "images/orage.png",
+    122: "images/orage.png",
+    123: "images/orage.png",
+    124: "images/orage.png",
+    125: "images/orage.png",
+    126: "images/orage.png",
+    127: "images/orage.png",
+    128: "images/orage.png",
+    130: "images/orage.png",
+    131: "images/orage.png",
+    132: "images/orage.png",
+    133: "images/orage.png",
+    134: "images/orage.png",
+    135: "images/orage.png",
+    136: "images/orage.png",
+    137: "images/orage.png",
+    138: "images/orage.png",
+    140: "images/pluie.png",
+    141: "images/pluie.png",
+    142: "images/pluie.png",
+    210: "images/pluie.png",
+    211: "images/pluie.png",
+    212: "images/pluie.png",
+    220: "images/neige.png",
+    221: "images/neige.png",
+    222: "images/neige.png",
+    230: "images/pluie.png",
+    231: "images/pluie.png",
+    232: "images/pluie.png",
+    235: "images/orage.png"
 };
 
 

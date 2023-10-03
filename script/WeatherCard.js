@@ -6,8 +6,9 @@ class WeatherCard {
     _createCardElement() {
         const cardHTML = `
             <div class="weather-card">
-                <img src="path_to_default_weather_image.jpg" alt="Weather Image" class="weather-image" id="weatherImage">
+                <img src="path_to_default_weather_image.jpg" alt="Météo actuel" class="weather-image" id="weatherImage">
                 <div class="weather-details">
+                <hr>
                     <p class="card_tempMin" id="tempMin">Température minimale: <span>0</span>°C</p>
                     <p class="card_tempMax" id="tempMax">Température maximale: <span>0</span>°C</p>
                     <p class="card_rainProb" id="rainProb">Probabilité de pluie: <span>0</span>%</p>
@@ -31,7 +32,10 @@ class WeatherCard {
     }
 
     updateData(data) {
-        if (data.imagePath) this.cardElement.querySelector('#weatherImage').src = data.imagePath;
+        if (data.imagePath) { 
+            this.cardElement.querySelector('#weatherImage').src = data.imagePath
+            this.cardElement.querySelector('#weatherImage').alt = (data.imagePath.split("/")[2]).split(".")[0];
+        };
         if (data.card_tempMin) this._updateFeature('card_tempMin', data.card_tempMin);
         if (data.card_tempMax) this._updateFeature('card_tempMax', data.card_tempMax);
         if (data.card_rainProb) this._updateFeature('card_rainProb', data.card_rainProb);
@@ -49,7 +53,7 @@ class WeatherCard {
             featureElement.style.display = shouldShow ? 'block' : 'none';
         }
     }
-    
+
 
     _updateFeature(featureClass, value) {
         const featureElement = this.cardElement.querySelector(`.${featureClass} span`);
@@ -57,7 +61,7 @@ class WeatherCard {
             featureElement.innerText = value;
         }
     }
-    
+
 }
 
 

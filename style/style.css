@@ -1,26 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 #titre{
     padding: 20px;
     border-radius: 20px;
-    border: solid rgb(0, 0, 0) 5px;
     margin: 10px;
-    font-size: 30px;
+    font-size: 60px;
+}
+
+h1 {
+    font-size: 7rem; /* par exemple */
+}
+
+/* Ajustement pour les écrans moyens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ajustement pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+#inputCP{
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 body{
     text-align: center;
-    font-family: 'Inclusive Sans', sans-serif;
-    background: #2980B9; 
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); 
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); 
+    font-family: 'Schoolbell', cursive;
+    font-size: 15px;
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;  /* Évite la répétition de l'image */
+    background-size: cover;       /* Couvre toute la surface */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
 }
+
 #formulaire{
     padding: 20px;
     border-radius: 20px;
-    border: solid rgb(0, 0, 0) 5px;
     margin: 10px;
     font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 select{
     margin-left: auto;
@@ -30,19 +55,20 @@ select{
     border: solid black 3px;
     background-color: transparent;
     border-radius: 10px;
-    background-color:#FFFFFF;
+    background-color: rgba(255, 255, 255, 0.3);
     color: black;
     padding: 5px;
 }
 #boutonVille{
+    display: block;
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     font-size: 50px;
-    color: black;
     padding: 10px;
-    width: 50px;
 }
+
 .ville{
     display: none;
     margin-top: 20px;
@@ -51,6 +77,10 @@ select{
     display: none;
 }
 #resultat{
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
     display: none;
 }
 .result{
@@ -125,7 +155,7 @@ select{
   padding: 0;
   outline: 0;
   border: 1px #777 solid;
-  width: 30%;
+  width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
   animation-name: slideDownFadeIN;
@@ -156,9 +186,10 @@ select{
 .container-modal {
     text-align: center;
     padding: 2px 16px;
+    font-size: 25px;
 }
 
-.container-head {
+.container_head {
     padding: 2px 16px;
 }
 
@@ -173,16 +204,16 @@ select{
 }
 
 .weather-card {
-    width: 250px;
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    font-size: 20px;
+    box-shadow: 4px 4px 7px rgba(0,0,0,0.5);
+    background-color: transparent;
 }
 
 .weather-image {
     width: 100%;
-    height: 150px;
     object-fit: cover;
 }
 
@@ -190,52 +221,39 @@ select{
     margin: 5px 0;
 }
 
-.weather-card {
-    flex-basis: calc(14.28% - 16px); /* C'est la largeur "idéale" ou "de base" pour chaque carte. */
-    flex-grow: 0; /* Empêche les cartes de grandir pour occuper un espace supplémentaire */
-    flex-shrink: 0; /* Empêche les cartes de rétrécir */
-    min-height: 200px;
-    width: calc(14.28% - 16px);  /* 100% divisé par 7 (pour 7 cartes) moins l'espace */
-    margin: 0;
-    padding: 10px;  /* ajustez selon vos besoins */
+em{
+    cursor: pointer;
+}
+
+a{
+    cursor: pointer;
 }
 
 #weatherCardsContainer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center; /* pour centrer horizontalement */
-    width: 100%; /* pour occuper toute la largeur */
-    align-items: start; /* aligne le haut des cartes */
-        overflow-x: auto;
-        margin: 0 auto; /* Pour centrer le conteneur dans la fenêtre */
+    flex-wrap: wrap; /* Cela permet aux cartes de passer à la ligne suivante si elles débordent */
+    justify-content: center;
+
 }
-
-
-@media (max-width: 1200px) {
-    .weather-card {
-        flex-basis: calc(16.66% - 16px); /* 100% / 6 */
-    }
-}
-
-@media (max-width: 1000px) {
-    .weather-card {
-        flex-basis: calc(20% - 16px); /* 100% / 5 */
-    }
-}
-
-* {
+.weather-card {
+    width: 320px;
     box-sizing: border-box;
+    margin: 10px;
+    margin-bottom: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {  /* 768px est une valeur courante pour cibler les écrans mobiles, mais vous pouvez ajuster selon vos besoins */
     .weather-card {
-        flex-basis: 100%; /* Les cartes occuperont 100% de la largeur de leur conteneur */
-        max-width: 100%; /* S'assure qu'ils n'essaient pas de devenir plus grands que 100% */
-        margin: 10px 0; /* Espace entre les cartes empilées; ajustez comme vous le souhaitez */
+        width: 100%;  /* Fait en sorte que la carte prenne toute la largeur disponible */
+        margin: 10px 0;  /* Gardez la marge verticale, mais retirez la marge horizontale pour que la carte prenne toute la largeur */
     }
 }
 
-em{
-    cursor: pointer;
+h2{
+    font-size: 40px;
+}
+hr{
+    height: 2px;
+    background-color: #000000;
+    border: none;
 }
