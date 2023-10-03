@@ -74,7 +74,8 @@ function listenerCP() {
 function valider() {
     resultat.style.display = 'block'
     formulaire.style.display = 'none'
-    fetch(`https://api.meteo-concept.com/api/forecast/daily?insee=${inputVille.value}&world=false&start=0&end=0&token=d9588107c8c240cee278bdf86180ba6140aad80ba16953aded2d70d4b5b287ad`)
+    weatherCardsContainer.innerHTML=""
+    fetch(`https://api.meteo-concept.com/api/forecast/daily?insee=${inputVille.value}&world=false&start=0&end=${nbjour.value - 1}&token=d9588107c8c240cee278bdf86180ba6140aad80ba16953aded2d70d4b5b287ad`)
         .then(Response => {
             if (!Response.ok) {
                 throw new Error('pas de reponse');
@@ -82,27 +83,27 @@ function valider() {
             return Response.json();
         })
         .then(data => {
-            min.innerText = `temperture minimal : ${data['forecast'][0]['tmin']}°C`
-            max.innerText = `temperture maximal : ${data['forecast'][0]['tmax']}°C`
-            soleil.innerText = `Ensoleillement journalier : ${data['forecast'][0]['sun_hours']} heures`
-            pluie.innerText = `Probabilité de pluie : ${data['forecast'][0]['probarain']}%`
-            latitude.innerText = `latitude : ${data['forecast'][0]['latitude']}°`
-            longitude.innerText = `longitude : ${data['forecast'][0]['longitude']}°`
-            precipitation.innerText = `precipitation : ${data['forecast'][0]['rr10']}mm`
-            vent.innerText = `vent : ${data['forecast'][0]['wind10m']}km/h`
-            dirVent.innerText = `dirction du vent : ${data['forecast'][0]['dirwind10m']}°`
-
-            latitude.style.display = 'none'
-            longitude.style.display = 'none'
-            precipitation.style.display = 'none'
-            vent.style.display = 'none'
-            dirVent.style.display = 'none'
-
-            dataWeather = {imagePath: "../images/meteo.png",tempMin: "15°C",tempMax: "21°C"}
-            for (let i = 0; i < numberOfDays; i++) {
+            for (let i = 0; i < nbjour.value; i++) {
+                let mine = data['forecast'][i]['tmin']
+                let maxe = data['forecast'][i]['tmax']
+                let soleile = data['forecast'][i]['sun_hours']
+                let pluiee = data['forecast'][i]['probarain']
+                let latitudee = data['forecast'][i]['latitude']
+                let longitudee = data['forecast'][i]['longitude']
+                let precipitatione = data['forecast'][i]['rr10']
+                let ventee = data['forecast'][i]['wind10m']
+                let dirVentee = data['forecast'][i]['dirwind10m']
+                dataWeather = { 'imagePath': "../images/meteo.png", 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee }
+ 
                 const weatherCard = new WeatherCard();
                 weatherCard.appendTo(weatherCardsContainer);
                 weatherCard.updateData(dataWeather);
+
+                weatherCard.toggleFeature('card_latitude', check_latitude.checked)
+                weatherCard.toggleFeature('card_longitude', check_longitude.checked)
+                weatherCard.toggleFeature('card_precipitation', check_precipitation.checked)
+                weatherCard.toggleFeature('card_wind', check_vent.checked)
+                weatherCard.toggleFeature('card_windDirection', check_dirVent.checked)
             }
         })
         .catch(error => {
@@ -111,37 +112,7 @@ function valider() {
 }
 
 function validerParam() {
-    if (check_latitude.checked) {
-        latitude.style.display = 'block'
-    } else {
-        latitude.style.display = 'none'
-    }
-
-    if (check_longitude.checked) {
-        longitude.style.display = 'block'
-    } else {
-        longitude.style.display = 'none'
-    }
-
-    if (check_precipitation.checked) {
-        precipitation.style.display = 'block'
-    } else {
-        precipitation.style.display = 'none'
-    }
-
-    if (check_vent.checked) {
-        vent.style.display = 'block'
-        console.log('ta gueule maman');
-    } else {
-        vent.style.display = 'none'
-    }
-
-    if (check_dirVent.checked) {
-        dirVent.style.display = 'block'
-    } else {
-        dirVent.style.display = 'none'
-    }
-
+    valider();
 }
 
 

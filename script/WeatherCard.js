@@ -8,7 +8,15 @@ class WeatherCard {
             <div class="weather-card">
                 <img src="path_to_default_weather_image.jpg" alt="Weather Image" class="weather-image" id="weatherImage">
                 <div class="weather-details">
-                    <!-- ... toutes les autres caractéristiques ... -->
+                    <p class="card_tempMin" id="tempMin">Température minimale: <span>0</span>°C</p>
+                    <p class="card_tempMax" id="tempMax">Température maximale: <span>0</span>°C</p>
+                    <p class="card_rainProb" id="rainProb">Probabilité de pluie: <span>0</span>%</p>
+                    <p class="card_sunlight" id="sunlight">Ensoleillement journalier: <span>0</span>heures</p>
+                    <p class="card_latitude" id="latitude">Latitude: <span>0</span>°</p>
+                    <p class="card_longitude" id="longitude">Longitude: <span>0</span>°</p>
+                    <p class="card_precipitation" id="precipitation">Précipitation: <span>0</span>mm</p>
+                    <p class="card_wind" id="wind">Vent: <span>0</span>km/h</p>
+                    <p class="card_windDirection" id="windDirection">Direction du vent: <span>0</span>°</p>
                 </div>
             </div>
         `;
@@ -23,34 +31,33 @@ class WeatherCard {
     }
 
     updateData(data) {
-        console.log("hello")
         if (data.imagePath) this.cardElement.querySelector('#weatherImage').src = data.imagePath;
-        if (data.tempMin) this._updateFeature('tempMin', data.tempMin);
-        if (data.tempMax) this._updateFeature('tempMax', data.tempMax);
-        if (data.rainProb) this._updateFeature('rainProb', data.rainProb);
-        if (data.sunlight) this._updateFeature('sunlight', data.sunlight);
-        if (data.latitude) this._updateFeature('latitude', data.latitude);
-        if (data.longitude) this._updateFeature('longitude', data.longitude);
-        if (data.precipitation) this._updateFeature('precipitation', data.precipitation);
-        if (data.wind) this._updateFeature('wind', data.wind);
-        if (data.windDirection) this._updateFeature('windDirection', data.windDirection);
+        if (data.card_tempMin) this._updateFeature('card_tempMin', data.card_tempMin);
+        if (data.card_tempMax) this._updateFeature('card_tempMax', data.card_tempMax);
+        if (data.card_rainProb) this._updateFeature('card_rainProb', data.card_rainProb);
+        if (data.card_sunlight) this._updateFeature('card_sunlight', data.card_sunlight);
+        if (data.card_latitude) this._updateFeature('card_latitude', data.card_latitude);
+        if (data.card_longitude) this._updateFeature('card_longitude', data.card_longitude);
+        if (data.card_precipitation) this._updateFeature('card_precipitation', data.card_precipitation);
+        if (data.card_wind) this._updateFeature('card_wind', data.card_wind);
+        if (data.card_windDirection) this._updateFeature('card_windDirection', data.card_windDirection);
     }
 
-    toggleFeature(featureId, shouldShow) {
-        const featureElement = this.cardElement.querySelector(`#${featureId}`);
+    toggleFeature(featureClass, shouldShow) {
+        const featureElement = this.cardElement.querySelector(`.${featureClass}`);
         if (featureElement) {
             featureElement.style.display = shouldShow ? 'block' : 'none';
         }
     }
+    
 
-    _updateFeature(featureId, value) {
-        const featureElement = this.cardElement.querySelector(`#${featureId} span`);
-        console.log("Élément à mettre à jour:", featureElement);
-
+    _updateFeature(featureClass, value) {
+        const featureElement = this.cardElement.querySelector(`.${featureClass} span`);
         if (featureElement) {
             featureElement.innerText = value;
         }
     }
+    
 }
 
 
