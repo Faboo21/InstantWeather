@@ -1,6 +1,6 @@
 # 🌦 InstantWeather
 
-**InstantWeather** est une plateforme en ligne lumineuse et innovante qui fournit des prévisions météorologiques précises pour votre commune. Basée sur le code postal, elle sert de pont entre le ciel et vous, tout cela avec une interface dessinée à la main qui respire la simplicité et l'authenticité.
+[**InstantWeather**](https://faboo21.github.io/InstantWeather/) est une plateforme en ligne lumineuse et innovante qui fournit des prévisions météorologiques précises pour votre commune. Basée sur le code postal, elle sert de pont entre le ciel et vous, tout cela avec une interface dessinée à la main qui respire la simplicité et l'authenticité.
 
 ## 🌟 Fonctionnalités principales
 
@@ -20,11 +20,11 @@ Pour ceux qui ont l'œil du détail :
 
 ## ✏️ Conception graphique
 
-Vivez une expérience unique avec une interface dessinée à la main avec Paint. C'est frais, c'est différent, c'est **InstantWeather**.
+Vivez une expérience unique avec une interface dessinée à la main avec Paint. C'est frais, c'est différent, c'est [**InstantWeather**](https://faboo21.github.io/InstantWeather/).
 
 ## 🚀 Comment l'utiliser ?
 
-1. 🌐 Accédez à la plateforme **InstantWeather**.
+1. 🌐 Accédez à la plateforme [**InstantWeather**](https://faboo21.github.io/InstantWeather/).
 2. 🔢 Entrez votre code postal.
 3. 🏘 Choisissez votre commune.
 4. 📅 Sélectionnez le nombre de jours de prévision.
@@ -38,4 +38,4 @@ Vivez une expérience unique avec une interface dessinée à la main avec Paint.
 - Eliot PETRUS 🌌
 - Mathéo LEVALLOIS 🌠
 
-Merci d'avoir choisi **InstantWeather**. Les étoiles sont la limite ! Si vous avez des questions ou des suggestions, contactez-nous. 💌
+Merci d'avoir choisi [**InstantWeather**](https://faboo21.github.io/InstantWeather/). Les étoiles sont la limite ! Si vous avez des questions ou des suggestions, contactez-nous. 💌
