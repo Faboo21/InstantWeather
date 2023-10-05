@@ -34,8 +34,8 @@ Vivez une expérience unique avec une interface dessinée à la main avec Paint.
 ---
 
 🌟 **Créé avec passion par :** 
-- Fabien LEROY 🚀
-- Eliot PETRUS 🌌
-- Mathéo LEVALLOIS 🌠
+- [Fabien LEROY 🚀](https://github.com/Faboo21)
+- [Eliot PETRUS 🌌](https://github.com/EliotPetrus)
+- [Mathéo LEVALLOIS 🌠](https://github.com/Matheo-Levallois)
 
 Merci d'avoir choisi [**InstantWeather**](https://faboo21.github.io/InstantWeather/). Les étoiles sont la limite ! Si vous avez des questions ou des suggestions, contactez-nous. 💌
