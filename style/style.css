@@ -6,7 +6,7 @@
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 80px;
 }
 
 @media (max-width: 768px) {
@@ -80,7 +80,7 @@ select {
     padding: 20px;
     border-radius: 20px;
     margin: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     display: none;
 }
 
@@ -213,11 +213,18 @@ select {
     border-radius: 15px;
     font-size: 20px;
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 320px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-bottom: 30px;
+    transform: translateX(100vw);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
 }
 
 .weather-image {
-    width: 100%;
+    width: 300px;
     object-fit: cover;
 }
 
@@ -237,23 +244,6 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.weather-card {
-    width: 320px;
-    box-sizing: border-box;
-    margin: 10px;
-    margin-bottom: 30px;
-}
-
-.weather-card {
-    /* autres styles de votre carte... */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.weather-card:hover {
-    transform: translateY(-10px); /* fait "léviter" la carte de 10 pixels vers le haut */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* ajoute une ombre pour donner une sensation de profondeur */
 }
 
 @media (max-width: 768px) {
@@ -303,4 +293,33 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .hover:hover img {
     transform: scale(1.1); /* L'image sera agrandie de 10% */
+}
+
+#weatherCardsContainer {
+    perspective: 1000px;
+}
+
+.weather-details {
+    width: 100%;
+    gap: 10px;
+}
+
+.subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.icon {
+    width: 100px;   /* ou tout autre taille que vous voulez */
+    vertical-align: middle;  /* pour aligner l'image avec le texte à côté */
+}
+
+.grid-item {
+    width: 100%;
+    box-sizing: border-box; /* pour que padding et border ne s'ajoutent pas à la largeur */
+}
+
+select:hover{
+    cursor: pointer;
 }

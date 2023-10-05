@@ -16,7 +16,6 @@ const soleil = document.getElementById("soleil")
 const validerParame = document.getElementById("validerParame")
 const weatherCardsContainer = document.getElementById('weatherCardsContainer');
 
-
 const latitude = document.getElementById("latitude")
 const longitude = document.getElementById("longitude")
 const precipitation = document.getElementById("precipitation")
@@ -36,7 +35,7 @@ listenerCP()
 inputCP.addEventListener("input", () => listenerCP())
 boutonVille.addEventListener("click", () => valider())
 refresh.addEventListener("click", () => { location.reload() })
-validerParame.addEventListener("click", () => validerParam())
+validerParame.addEventListener("click", () => valider())
 
 value.textContent = nbjour.value;
 nbjour.addEventListener("input", (event) => {
@@ -44,15 +43,11 @@ nbjour.addEventListener("input", (event) => {
 })
 
 function listenerCP() {
-
     let newValue = inputCP.value.replace(/[^0-9]/g, '');
-    
     if (newValue.length > 5) {
         newValue = newValue.substring(0, 5);
     }
-
     inputCP.value = newValue;
-    
     codePostal = inputCP.value
 
     for (var i = 0; i < ville.length; i++) { ville[i].style.display = "none" }
@@ -104,7 +99,8 @@ function valider() {
                 let ventee = data['forecast'][i]['wind10m']
                 let dirVentee = data['forecast'][i]['dirwind10m']
                 let imagePath = weatherCodeToImage[data['forecast'][i]['weather']];
-                dataWeather = { 'imagePath': "../"+imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee }
+                let date = splitDate(data['forecast'][i]['datetime'])
+                dataWeather = { 'imagePath': "../"+imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date}
  
                 const weatherCard = new WeatherCard();
                 weatherCard.appendTo(weatherCardsContainer);
@@ -115,6 +111,8 @@ function valider() {
                 weatherCard.toggleFeature('card_precipitation', check_precipitation.checked)
                 weatherCard.toggleFeature('card_wind', check_vent.checked)
                 weatherCard.toggleFeature('card_windDirection', check_dirVent.checked)
+
+                animateCards()
             }
         })
         .catch(error => {
@@ -122,8 +120,26 @@ function valider() {
         })
 }
 
-function validerParam() {
-    valider();
+function splitDate(date) {
+    let maDate1 = date.split("T");
+    let maDate2 = maDate1[0].split("-");
+    let mois = ['JANVIER','FEVRIER','MARS','AVRIL','MAI','JUIN','JUILLET','AOUT','SEPTEMBRE','OCTOBRE','NOVEMBRE','DECEMBRE'];
+    let jourSemaine = ['DIMANCHE', 'LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI', 'SAMEDI'];
+    let jour1 = new Date(date);
+    let jour2 = jour1.getDay();
+    return `${jourSemaine[jour2]} ${maDate2[2]} ${mois[maDate2[1]-1]}`;
+}
+
+function animateCards() {
+    const cards = document.querySelectorAll('.weather-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.transform = 'translateX(0)';
+            card.addEventListener('transitionend', function() {
+                card.classList.add('zoomOnHover');  // Ajoute la classe après la transition
+            }, { once: true });  // L'événement sera écouté une seule fois pour chaque carte
+        }, 200 * index);
+    });
 }
 
 let weatherCodeToImage = {
