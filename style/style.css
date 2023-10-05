@@ -37,11 +37,15 @@ body {
 }
 
 #formulaire {
-    padding: 20px;
     border-radius: 20px;
     margin: 10px;
     font-size: 30px;
     background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
 }
 
 select {
@@ -58,7 +62,7 @@ select {
 }
 
 #boutonVille {
-    display: block;
+    display: none;
     width: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -70,10 +74,6 @@ select {
 .ville {
     display: none;
     margin-top: 20px;
-}
-
-#boutonVille {
-    display: none;
 }
 
 #resultat {
@@ -97,10 +97,6 @@ select {
     vertical-align: middle;
     line-height: 50px;
     border: solid black 3px;
-}
-
-#meteo {
-    width: 300px;
 }
 
 #inputCP {
@@ -203,10 +199,6 @@ select {
     margin-bottom: 10px;
 }
 
-#resultat {
-    display: block;
-}
-
 .weather-card {
     border: 2px solid #000000;
     padding: 10px;
@@ -232,11 +224,7 @@ select {
     margin: 5px 0;
 }
 
-em {
-    cursor: pointer;
-}
-
-a {
+em, select, a{
     cursor: pointer;
 }
 
@@ -261,30 +249,6 @@ hr {
     height: 2px;
     background-color: #000000;
     border: none;
-}
-
-input.check {
-    width: 20px;
-    height: 20px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 10px;
-    cursor: pointer;
-    background: #CCC;
-    border-radius: 5px;
 }
 
 .hover img {
@@ -318,8 +282,4 @@ input[type="range"]::-webkit-slider-runnable-track {
 .grid-item {
     width: 100%;
     box-sizing: border-box; /* pour que padding et border ne s'ajoutent pas à la largeur */
-}
-
-select:hover{
-    cursor: pointer;
 }
