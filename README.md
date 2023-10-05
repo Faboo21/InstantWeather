@@ -6,7 +6,7 @@
 
 1. **🔍 Prévisions météo basées sur le code postal** : Entrez simplement le code postal de votre choix et une liste de communes correspondantes s'affichera.
 2. **🗓 Affichage flexible** : Choisissez votre fenêtre météorologique, allant de 1 à 7 jours.
-3. **🌡 Informations météorologiques essentielles** :
+3. **🌦 Informations météorologiques essentielles** :
    - 🌡️ Température minimale et maximale
    - 🌧 Probabilité de pluie
    - ☀️ Temps d'ensoleillement
