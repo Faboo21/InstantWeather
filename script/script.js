@@ -150,9 +150,6 @@ function valider() {
                 weatherCard.toggleFeature('card_precipitation', check_precipitation.checked)
                 weatherCard.toggleFeature('card_wind', check_vent.checked)
                 weatherCard.toggleFeature('card_windDirection', check_dirVent.checked)
-
-                
-                
             }
             //lance l'animation d'affichage de la carte
             animateCards()
