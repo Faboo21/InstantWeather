@@ -135,7 +135,7 @@ function valider() {
                 let date = splitDate(data['forecast'][i]['datetime'])
 
                 // insere les données dans un dictionaire
-                dataWeather = { 'imagePath': "../" + imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date }
+                dataWeather = { 'imagePath': "./" + imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date }
 
                 // crée une card
                 const weatherCard = new WeatherCard();
@@ -180,8 +180,8 @@ function animateCards() {
         setTimeout(() => {
             card.style.transform = 'translateX(0)';
             card.addEventListener('transitionend', function () {
-                card.classList.add('zoomOnHover');  // Ajoute la classe après la transition
-            }, { once: true });  // L'événement sera écouté une seule fois pour chaque carte
+                card.classList.add('zoomOnHover');
+            }, { once: true });
         }, 200 * index);
     });
 }
