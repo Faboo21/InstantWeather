@@ -20,19 +20,19 @@ class WeatherCard {
             <div class="weather-details">
                 <div class="subgrid">
                     <div class="grid-item">
-                        <img src="../images/tmpmin.png" alt="Température minimale" class="icon">
+                        <img src="images/tmpmin.png" alt="Température minimale" class="icon">
                         <p class="card_tempMin" id="tempMin"><span>0</span>°C</p>
                     </div>
                     <div class="grid-item">
-                        <img src="../images/tmpmax.png" alt="Température maximale" class="icon">
+                        <img src="images/tmpmax.png" alt="Température maximale" class="icon">
                         <p class="card_tempMax" id="tempMax"><span>0</span>°C</p>
                     </div>
                     <div class="grid-item">
-                        <img src="../images/pluie.png" alt="Probabilité de pluie" class="icon">
+                        <img src="images/pluie.png" alt="Probabilité de pluie" class="icon">
                         <p class="card_rainProb" id="rainProb"><span>0</span>%</p>
                     </div>
                     <div class="grid-item">
-                        <img src="../images/soleil.png" alt="Ensoleillement journalier" class="icon">
+                        <img src="images/soleil.png" alt="Ensoleillement journalier" class="icon">
                         <p class="card_sunlight" id="sunlight"><span>0</span>h</p>
                     </div>
                 </div>

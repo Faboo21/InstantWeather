@@ -135,7 +135,7 @@ function valider() {
                 let date = splitDate(data['forecast'][i]['datetime'])
 
                 // insere les données dans un dictionaire
-                dataWeather = { 'imagePath': "./" + imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date }
+                dataWeather = { 'imagePath': imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date }
 
                 // crée une card
                 const weatherCard = new WeatherCard();
