@@ -37,8 +37,8 @@ Vivez une expérience unique avec une interface dessinée à la main avec Paint 
 - 🎨 **CSS3**
 - 💻 **JavaScript**
 
-  ## Tableau Kanban
-  [Accédez à notre tableau kanban](https://iw3.atlassian.net/jira/software/projects/KAN/boards/1).
+## 📅 Tableau Kanban
+✅ [Accédez à notre tableau kanban](https://iw3.atlassian.net/jira/software/projects/KAN/boards/1).
 
 ---
 
