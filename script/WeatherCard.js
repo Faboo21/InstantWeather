@@ -1,8 +1,16 @@
+/**
+ * Classe weather card
+ * permet de gerer les cartes avec des methodes
+ */
 class WeatherCard {
+    //constructeur qui fait le html
     constructor() {
         this.cardElement = this._createCardElement();
     }
 
+    /**
+     * methode appelée dans le constructeur qui crée la carte
+     */
     _createCardElement() {
         const cardHTML = `
         <div class="weather-card">
@@ -34,7 +42,7 @@ class WeatherCard {
                 <p class="card_precipitation" id="precipitation">Précipitation: <span>0</span>mm</p>
                 <p class="card_wind" id="wind">Vent: <span>0</span>km/h</p>
                 <p class="card_windDirection" id="windDirection">Direction du vent: <span>0</span>°</p>
-            </div>A
+            </div>
         </div>
         `;
 
@@ -43,10 +51,17 @@ class WeatherCard {
         return div.firstChild;
     }
 
+    /**
+     * sert a ajouter la carte au weather card conteneur
+     */
     appendTo(parent) {
         parent.appendChild(this.cardElement);
     }
 
+    /**
+     * met a jour les donnes de la carte recu par le dictionnaire un paramettres 
+     * @param {*} data 
+     */
     updateData(data) {
         if (data.imagePath) {
             this.cardElement.querySelector('#weatherImage').src = data.imagePath
@@ -64,6 +79,11 @@ class WeatherCard {
         if (data.card_date) this._updateFeature('card_date', data.card_date);
     }
 
+    /**
+     * permet de choisir si on affiche ou non un atribut de la carte
+     * @param {*} featureClass 
+     * @param {*} shouldShow 
+     */
     toggleFeature(featureClass, shouldShow) {
         const featureElement = this.cardElement.querySelector(`.${featureClass}`);
         if (featureElement) {
@@ -72,6 +92,11 @@ class WeatherCard {
     }
 
 
+    /**
+     * modifie l'attribut par la nouvelle valeur
+     * @param {*} featureClass 
+     * @param {*} value 
+     */
     _updateFeature(featureClass, value) {
         const featureElement = this.cardElement.querySelector(`.${featureClass} span`);
         if (featureElement) {
