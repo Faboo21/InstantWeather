@@ -78,7 +78,7 @@ function listenerCP() {
 function valider() {
     resultat.style.display = 'block'
     formulaire.style.display = 'none'
-    weatherCardsContainer.innerHTML=""
+    weatherCardsContainer.innerHTML = ""
     fetch(`https://api.meteo-concept.com/api/forecast/daily?insee=${inputVille.value}&world=false&start=0&end=${nbjour.value - 1}&token=d9588107c8c240cee278bdf86180ba6140aad80ba16953aded2d70d4b5b287ad`)
         .then(Response => {
             if (!Response.ok) {
@@ -87,7 +87,7 @@ function valider() {
             return Response.json();
         })
         .then(data => {
-            nomVille.innerText = "Prévisions pour la ville de "+data['city']['name']
+            nomVille.innerText = "Prévisions pour la ville de " + data['city']['name']
             for (let i = 0; i < nbjour.value; i++) {
                 let mine = data['forecast'][i]['tmin']
                 let maxe = data['forecast'][i]['tmax']
@@ -100,8 +100,8 @@ function valider() {
                 let dirVentee = data['forecast'][i]['dirwind10m']
                 let imagePath = weatherCodeToImage[data['forecast'][i]['weather']];
                 let date = splitDate(data['forecast'][i]['datetime'])
-                dataWeather = { 'imagePath': "../"+imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date}
- 
+                dataWeather = { 'imagePath': "../" + imagePath, 'card_tempMin': mine, 'card_tempMax': maxe, 'card_rainProb': pluiee, 'card_sunlight': soleile, 'card_latitude': latitudee, 'card_longitude': longitudee, 'card_precipitation': precipitatione, 'card_wind': ventee, 'card_windDirection': dirVentee, 'card_date': date }
+
                 const weatherCard = new WeatherCard();
                 weatherCard.appendTo(weatherCardsContainer);
                 weatherCard.updateData(dataWeather);
@@ -123,11 +123,11 @@ function valider() {
 function splitDate(date) {
     let maDate1 = date.split("T");
     let maDate2 = maDate1[0].split("-");
-    let mois = ['JANVIER','FEVRIER','MARS','AVRIL','MAI','JUIN','JUILLET','AOUT','SEPTEMBRE','OCTOBRE','NOVEMBRE','DECEMBRE'];
+    let mois = ['JANVIER', 'FEVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOUT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DECEMBRE'];
     let jourSemaine = ['DIMANCHE', 'LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI', 'SAMEDI'];
     let jour1 = new Date(date);
     let jour2 = jour1.getDay();
-    return `${jourSemaine[jour2]} ${maDate2[2]} ${mois[maDate2[1]-1]}`;
+    return `${jourSemaine[jour2]} ${maDate2[2]} ${mois[maDate2[1] - 1]}`;
 }
 
 function animateCards() {
@@ -135,7 +135,7 @@ function animateCards() {
     cards.forEach((card, index) => {
         setTimeout(() => {
             card.style.transform = 'translateX(0)';
-            card.addEventListener('transitionend', function() {
+            card.addEventListener('transitionend', function () {
                 card.classList.add('zoomOnHover');  // Ajoute la classe après la transition
             }, { once: true });  // L'événement sera écouté une seule fois pour chaque carte
         }, 200 * index);
@@ -232,6 +232,3 @@ let weatherCodeToImage = {
     232: "images/pluie.png",
     235: "images/orage.png"
 };
-
-
-

@@ -34,7 +34,7 @@ class WeatherCard {
                 <p class="card_precipitation" id="precipitation">Précipitation: <span>0</span>mm</p>
                 <p class="card_wind" id="wind">Vent: <span>0</span>km/h</p>
                 <p class="card_windDirection" id="windDirection">Direction du vent: <span>0</span>°</p>
-            </div>
+            </div>A
         </div>
         `;
 

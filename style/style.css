@@ -224,7 +224,9 @@ select {
     margin: 5px 0;
 }
 
-em, select, a{
+em,
+select,
+a {
     cursor: pointer;
 }
 
@@ -252,11 +254,13 @@ hr {
 }
 
 .hover img {
-    transition: transform 0.3s; /* Transition douce pour l'effet de zoom */
+    transition: transform 0.3s;
+    /* Transition douce pour l'effet de zoom */
 }
 
 .hover:hover img {
-    transform: scale(1.1); /* L'image sera agrandie de 10% */
+    transform: scale(1.1);
+    /* L'image sera agrandie de 10% */
 }
 
 #weatherCardsContainer {
@@ -275,11 +279,14 @@ hr {
 }
 
 .icon {
-    width: 100px;   /* ou tout autre taille que vous voulez */
-    vertical-align: middle;  /* pour aligner l'image avec le texte à côté */
+    width: 100px;
+    /* ou tout autre taille que vous voulez */
+    vertical-align: middle;
+    /* pour aligner l'image avec le texte à côté */
 }
 
 .grid-item {
     width: 100%;
-    box-sizing: border-box; /* pour que padding et border ne s'ajoutent pas à la largeur */
+    box-sizing: border-box;
+    /* pour que padding et border ne s'ajoutent pas à la largeur */
 }
