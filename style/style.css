@@ -246,7 +246,7 @@ select {
     font-size: 20px;
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.6);
-    width: 320px;
+    width: 220px;
     box-sizing: border-box;
     margin: 10px;
     margin-bottom: 30px;
@@ -256,7 +256,7 @@ select {
 }
 
 .weather-image {
-    width: 300px;
+    width: 200px;
     object-fit: cover;
 }
 
@@ -320,7 +320,7 @@ hr {
 }
 
 .icon {
-    width: 100px;
+    width: 60px;
     /* ou tout autre taille que vous voulez */
     vertical-align: middle;
     /* pour aligner l'image avec le texte à côté */
