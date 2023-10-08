@@ -65,7 +65,7 @@ class WeatherCard {
     updateData(data) {
         if (data.imagePath) {
             this.cardElement.querySelector('#weatherImage').src = data.imagePath
-            this.cardElement.querySelector('#weatherImage').alt = (data.imagePath.split("/")[2]).split(".")[0];
+            this.cardElement.querySelector('#weatherImage').alt = (data.imagePath.split("/")[1]).split(".")[0];
         };
         if (data.card_tempMin) this._updateFeature('card_tempMin', data.card_tempMin);
         if (data.card_tempMax) this._updateFeature('card_tempMax', data.card_tempMax);
